@@ -50,7 +50,7 @@ class ProfileScreenState extends State<ProfileScreen> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(16.0),
+              padding: const EdgeInsets.all(10.0),
               child: Card(
                 shadowColor: defaultColor,
                 color: whiteText,
@@ -59,7 +59,7 @@ class ProfileScreenState extends State<ProfileScreen> {
                 ),
                 elevation: 1,
                 child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 10),
+                  padding: EdgeInsets.symmetric(vertical: 15, horizontal: 5),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [

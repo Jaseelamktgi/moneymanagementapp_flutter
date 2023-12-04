@@ -5,7 +5,6 @@ import 'package:intl/intl.dart';
 import 'package:moneymanagementapp_flutter/Core/Colors.dart';
 import 'package:moneymanagementapp_flutter/Model/Category/Category_model.dart';
 import 'package:moneymanagementapp_flutter/Model/Transaction/Transaction_model.dart';
-import 'package:moneymanagementapp_flutter/Screens/Transactions/Widgets/appbar.dart';
 import 'package:moneymanagementapp_flutter/db/Category/Category_db.dart';
 import 'package:moneymanagementapp_flutter/db/Transaction/Transaction_db.dart';
 
@@ -18,19 +17,22 @@ class TransactionScreen extends StatelessWidget {
     CategoryDB.instance.refreshUI();
     return Scaffold(
       appBar: AppBar(
+        title: Text(
+          'All Transactions',
+          style: TextStyle(color: whiteText),
+        ),
+        centerTitle: true,
         automaticallyImplyLeading: false,
+        toolbarHeight: 100.0,
         backgroundColor: defaultColor,
-        toolbarHeight: 150.0,
         shape: ContinuousRectangleBorder(
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(30.0),
             bottomRight: Radius.circular(30.0),
             topLeft: Radius.circular(5.0),
-                        topRight: Radius.circular(5.0),
-
+            topRight: Radius.circular(5.0),
           ),
         ),
-        flexibleSpace: PreferredSizeWidgetExample(),
       ),
       body: ValueListenableBuilder(
           valueListenable: TransactionDB.instance.transactionListNotifier,
@@ -111,6 +113,4 @@ class TransactionScreen extends StatelessWidget {
       ),
     );
   }
-  
 }
-
